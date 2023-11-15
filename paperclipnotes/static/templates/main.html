@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paperclip</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+    <style>
+        .custom-navbar {
+            background-color: rgb(46 50 53);
+        }
+
+        .sidebar {
+            background-color: #f8f9fa;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 58px; 
+            padding-top: 20px; 
+            overflow-y: auto;
+        }
+
+        .last-item {
+            margin-bottom: 80px;
+        }
+
+        .custom-btn-color {
+            background-color: rgb(46 50 53);
+            color: rgb(255 255 255);
+            border-color: rgb(46 50 53);
+        }
+
+        .custom-btn-color:hover {
+            background-color: rgb(255, 255, 255);
+            color: rgb(46 50 53);
+            border-color: rgb(46 50 53);
+        }
+
+        .custom-btn-color2 {
+            background-color: rgb(229 63 66);
+            color: rgb(255 255 255);
+            border-color: rgb(229 63 66);
+        }
+
+        .custom-btn-color2:hover {
+            background-color: rgb(255, 255, 255);
+            color: rgb(229 63 66);
+            border-color: rgb(229 63 66);
+        }
+
+
+        .icon {
+            width: 20px;
+            height: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <div class="container my-5">
+        {% block content %}
+
+        {% endblock %}
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('#note-list li:last-child').addClass('last-item');
+    });
+    </script> 
+</body>
+</html>

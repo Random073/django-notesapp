@@ -1,0 +1,52 @@
+<!-- {% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3 sidebar">
+            <div class="notes-list-heading text-start mb-3">
+                <h1 class="fs-4">Notes:</h1>
+            </div>
+            <ul class="list-group" id="note-list" style="max-height: 78vh; overflow-y: auto;">
+                {% for note in notes %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span>{{ note.title|truncatechars:50 }}</span>
+                        <a href="{% url 'notes.update' pk=note.id %}" class="btn btn-info btn-sm custom-btn-color">View Note</a>
+                    </li>
+                {% endfor %}
+            </ul>
+            <hr class="mt-4">
+            <div class="mt-3 d-flex justify-content-between align-items-end">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}" class="btn custom-btn-color ml-2">Logout</a>
+                {% endif %}
+                <a href="{% url 'notes.new' %}" class="btn custom-btn-color mr-2">New Note</a>
+            </div>
+        </div>
+        <div class="col-md-9 offset-md-3">
+            <div class="card">
+                <div class="card-header">
+                    Note Details <br>
+                    Created: {{note.created}} <br>
+                    Modified: {{note.modified}}
+                </div>
+                <div class="card-body">
+                    <h1 class="fs-5">{{note.title}}</h1>
+                    <p>{{note.text}}</p>
+                </div>
+                <div class="card-footer">
+                    <a href="{% url 'notes.update' pk=note.id %}" class="btn btn-sm">
+                        <img src="{% static 'images/edit.png' %}" alt="Edit Icon" class="icon">
+                    </a>
+                    <a href="{% url 'notes.delete' pk=note.id %}" class="btn btn-sm">
+                        <img src="{% static 'images/delete.png' %}" alt="Delete Icon" class="icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+ -->

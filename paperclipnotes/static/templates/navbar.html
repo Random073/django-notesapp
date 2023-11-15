@@ -1,0 +1,15 @@
+{% load static %}
+
+<nav class="navbar navbar-dark custom-navbar">
+    <div class="d-flex justify-content-start align-items-center ms-3">
+        <h1 class="fs-3 text-start text-white me-3">Paperclip</h1>
+    </div>
+    <div class="ms-auto me-3">
+        {% if user.is_authenticated %}
+            <b style="color: white; margin-right:10px ">Hello {{user}}!</b>
+        {% else %}
+            <a href="{% url 'login' %}" class="btn btn-outline-light me-2">Login</a>
+            <a href="{% url 'signup' %}" class="btn btn-outline-light">Signup</a>
+        {% endif %}
+    </div>
+</nav>
